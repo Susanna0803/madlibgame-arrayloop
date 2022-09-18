@@ -54,9 +54,11 @@ var getRandomIndex = function (adjectives) {
 
 var main = function (input) {
   if (input !== "create") {
-    adjectives.push(input);
+    var adjectives2 = input.split(" ");
+    console.log("adjectives2: ", adjectives2);
+    adjectives = adjectives.concat(adjectives2);
     console.log("adjectives: ", adjectives);
-    return "Please type 1 adjective word!<br><br>When you have input as much adjectives as you want, type 'create' to generate the random word.";
+    return "Please type 1 adjective word or more (with a space between the words)!<br><br>When you have input as much adjectives as you want, type 'create' to generate the random word.";
   } else if ((input = "create")) {
     var wordGener = getRandomIndex(adjectives);
     console.log(wordGener);
